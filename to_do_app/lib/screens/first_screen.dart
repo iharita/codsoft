@@ -1,27 +1,27 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:to_do_app/app_colors.dart';
-import 'package:to_do_app/screens/login.dart';
+import 'package:to_do_app/screens/second_screen.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class FirstScreen extends StatefulWidget {
+  const FirstScreen({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<FirstScreen> createState() => _FirstScreenState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _FirstScreenState extends State<FirstScreen> {
   final List<Map<String, String>> imgList = [
     {
-      "url": "https://img.freepik.com/free-vector/mobile-note-list-concept-illustration_114360-2347.jpg?t=st=1718272687~exp=1718276287~hmac=476f087ceb855b4cfa9b5f09bf709589751380ad8c308d4f57d78b4b2b82f6a9&w=740",
+      "item": "assets/tab1.jpg",
+      "text": "Plan your day with HABITA"
+    },
+    {
+      "item": "assets/tab2.jpg",
       "text": "Mobile Note List"
     },
     {
-      "url": "https://img.freepik.com/free-vector/appointment-booking-with-smartphone_23-2148554232.jpg?t=st=1718272532~exp=1718276132~hmac=9d099dc53a79efa0316faa3071fd73b5ff33e560942cae01f201dc96ae7530d4&w=740",
-      "text": "Appointment Booking"
-    },
-    {
-      "url": "https://img.freepik.com/free-vector/lovely-hand-drawn-planning-schedule-concept_23-2147956312.jpg?t=st=1718272534~exp=1718276134~hmac=c9cd731d95189e3f4724eed4ee7bb70228fdf60d1c2adc67ee5deee306b34d21&w=740",
+      "item": "assets/tab3.jpg",
       "text": "Planning Schedule"
     }
   ];
@@ -42,8 +42,8 @@ class _HomeViewState extends State<HomeView> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            item['url']!,
+                          Image.asset(
+                            item['item']!,
                             fit: BoxFit.cover,
                             height: 400.0,
                           ),
@@ -75,17 +75,17 @@ class _HomeViewState extends State<HomeView> {
               minWidth: MediaQuery.of(context).size.width - 80,
               height: 60.0,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const LoginScreen()));
+                        builder: (context) => const SecondScreen()));
               },
-              color: secondprimaryColor,
+              color: primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               child: const Text(
-                "Login",
-                style: TextStyle(color: secondprimaryLightColor, fontSize: 22),
+                "Get Started",
+                style: TextStyle(color: whiteColor, fontSize: 22),
               ),
             ),
           ),

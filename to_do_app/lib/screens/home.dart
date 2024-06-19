@@ -10,10 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
           fontFamily: GoogleFonts.dmSans().fontFamily
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
