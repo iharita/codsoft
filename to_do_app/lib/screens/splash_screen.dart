@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Start a timer to change the screen after 3 seconds
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 10), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (BuildContext context) => const FirstScreen()));
     });
